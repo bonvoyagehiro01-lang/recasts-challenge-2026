@@ -1,0 +1,36 @@
+[1/6] track metadata
+[2/6] track embeddings
+  loaded all_tracks-00000-of-00004.parquet
+  loaded all_tracks-00001-of-00004.parquet
+  loaded all_tracks-00002-of-00004.parquet
+  loaded all_tracks-00003-of-00004.parquet
+  embedding rows aligned: 47,071/47,071 catalog tracks (cf-bpr present: 46,455, metadata-qwen3 present: 46,579)
+[3/6] user embeddings + dev conversations
+  users with cf-bpr: 8,591
+  dev sessions: 1,000
+[4/6] collect per-turn contexts
+  turns: 8,000  (29s)
+[5/6] score + rank in chunks (embedding channels via batched GEMM)
+  scored turns 512/8,000 (61s)
+  scored turns 1,024/8,000 (80s)
+  scored turns 1,536/8,000 (92s)
+  scored turns 2,048/8,000 (105s)
+  scored turns 2,560/8,000 (118s)
+  scored turns 3,072/8,000 (131s)
+  scored turns 3,584/8,000 (147s)
+  scored turns 4,096/8,000 (181s)
+  scored turns 4,608/8,000 (216s)
+  scored turns 5,120/8,000 (251s)
+  scored turns 5,632/8,000 (284s)
+  scored turns 6,144/8,000 (319s)
+  scored turns 6,656/8,000 (354s)
+  scored turns 7,168/8,000 (378s)
+  scored turns 7,680/8,000 (394s)
+  scored turns 8,000/8,000 (401s)
+[6/6] evaluate
+  random      nDCG@1=0.0000 nDCG@10=0.0000 nDCG@20=0.0001 catDiv=0.9669 lexDiv=0.0000 partial=0.0967
+  popularity  nDCG@1=0.0001 nDCG@10=0.0007 nDCG@20=0.0010 catDiv=0.0004 lexDiv=0.0000 partial=0.0005
+  bm25_only   nDCG@1=0.0160 nDCG@10=0.0355 nDCG@20=0.0404 catDiv=0.2689 lexDiv=0.0000 partial=0.0471
+  emb_only    nDCG@1=0.0194 nDCG@10=0.0593 nDCG@20=0.0718 catDiv=0.3815 lexDiv=0.0000 partial=0.0741
+  fused       nDCG@1=0.0275 nDCG@10=0.0694 nDCG@20=0.0826 catDiv=0.3147 lexDiv=0.1232 partial=0.0851
+saved results/predictions_fused_dev.json, results/scores_dev.json  (total 402s)

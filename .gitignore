@@ -1,0 +1,4 @@
+# Dataset is CC BY-NC 4.0 and must not be redistributed
+data/
+.venv/
+__pycache__/
